@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv03ki6hramp5"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_2r7p7"]
+[ext_resource type="Texture2D" uid="uid://i7l1uq8iag8v" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="3_83gbw"]
+[ext_resource type="Texture2D" uid="uid://c5ym2yg0jkjfw" path="res://Rocky Roads/Backgrounds/trees.png" id="4_mgkcx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r7p7")
+
+[node name="MountainsA" type="Sprite2D" parent="."]
+position = Vector2(561.5, 176.75)
+scale = Vector2(4.85547, 3.53516)
+texture = ExtResource("3_83gbw")
+
+[node name="Trees" type="Sprite2D" parent="."]
+position = Vector2(558, 326)
+scale = Vector2(6.70898, 5)
+texture = ExtResource("4_mgkcx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -125.0
+offset_right = 100.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
